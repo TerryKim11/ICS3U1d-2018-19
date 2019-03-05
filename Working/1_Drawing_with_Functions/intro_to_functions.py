@@ -14,16 +14,11 @@ def draw_rollinghills():
     arcade.draw_circle_filled(600, -150, 360, arcade.color.BANGLADESH_GREEN)
     arcade.draw_circle_filled(200, -90, 320, arcade.color.DARK_OLIVE_GREEN)
 
-def draw_tree():
-    arcade.draw_rectangle_filled(100, 100, 20, 50, arcade.color.DARK_BROWN)
-    arcade.draw_triangle_filled(70, 100, 130, 100, 100, 130, arcade.color.CAMOUFLAGE_GREEN)
-    arcade.draw_triangle_filled(75, 120, 125, 120, 100, 150, arcade.color.CAMOUFLAGE_GREEN)
-    arcade.draw_triangle_filled(80, 140, 120, 140, 100, 170, arcade.color.CAMOUFLAGE_GREEN)
-
-    arcade.draw_rectangle_filled(550, 120, 20, 50, arcade.color.DARK_BROWN)
-    arcade.draw_triangle_filled(520, 120, 580, 120, 550, 150, arcade.color.CAMOUFLAGE_GREEN)
-    arcade.draw_triangle_filled(525, 140, 575, 140, 550, 170, arcade.color.CAMOUFLAGE_GREEN)
-    arcade.draw_triangle_filled(530, 160, 570, 160, 550, 190, arcade.color.CAMOUFLAGE_GREEN)
+def draw_tree(x, y):
+    arcade.draw_rectangle_filled(x, y, 20, 50, arcade.color.DARK_BROWN)
+    arcade.draw_triangle_filled(x - 30, y, x + 30, y, x, y + 30, arcade.color.CAMOUFLAGE_GREEN)
+    arcade.draw_triangle_filled(x - 25, y + 20, x + 25, y + 20, x, y + 50, arcade.color.CAMOUFLAGE_GREEN)
+    arcade.draw_triangle_filled(x - 20, y + 40, x + 20, y + 40, x, y + 70, arcade.color.CAMOUFLAGE_GREEN)
 
 def main():
     arcade.open_window(SCREEN_WIDTH, SCREEN_HEIGHT, "Drawing with Functions")
@@ -34,7 +29,8 @@ def main():
 
     draw_cloud()
     draw_rollinghills()
-    draw_tree()
+    draw_tree(100, 100)
+    draw_tree(550, 120)
 
     # Finish and run
     arcade.finish_render()
