@@ -4,10 +4,10 @@ SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
 # define your draw functions
-def draw_cloud():
-    arcade.draw_circle_filled(100, 500, 50,arcade.color.WHITE)
-    arcade.draw_circle_filled(150, 500, 60, arcade.color.WHITE)
-    arcade.draw_circle_filled(190, 500, 40, arcade.color.WHITE)
+def draw_cloud(x, y):
+    arcade.draw_circle_filled(x, y, 50,arcade.color.WHITE)
+    arcade.draw_circle_filled(x + 50, y, 60, arcade.color.WHITE)
+    arcade.draw_circle_filled(x + 90, y, 40, arcade.color.WHITE)
 
 def draw_rollinghills():
     arcade.draw_circle_filled(400, -200, 380, arcade.color.DARK_GREEN)
@@ -27,10 +27,17 @@ def main():
 
    # call your draw functions
 
-    draw_cloud()
+    draw_cloud(100, 500)
+    draw_cloud(450, 520)
+    draw_cloud(690, 380)
     draw_rollinghills()
     draw_tree(100, 100)
+    draw_tree(170, 80)
+    draw_tree(210, 140)
+    draw_tree(340, 50)
     draw_tree(550, 120)
+    draw_tree(600, 80)
+    draw_tree(670, 150)
 
     # Finish and run
     arcade.finish_render()
